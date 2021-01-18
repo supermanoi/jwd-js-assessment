@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
-          liElement.style.backgroundColor = "green";
+          liElement.style.backgroundColor = "lightgreen";
         }
 
         if (radioElement.checked) {
@@ -104,13 +104,13 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
     const scoreDisplay = document.getElementById("score");
-    scoreDisplay.innerHTML = `Your score is ${score}`;
+    scoreDisplay.innerHTML = `Your score is ${score} / ` + quizArray.length;
   };
 
   const btnSubmit = document.getElementById("btnSubmit");
   btnSubmit.addEventListener("click", () => {
     calculateScore();
-    // $("#btnSubmit").hide();
+    $("#btnSubmit").hide();
   });
 
   btnReset.addEventListener("click", () => {
@@ -119,13 +119,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
   displayQuiz();
 });
-
-btnReset.addEventListener("click", () => {
-  location.reload();
-});
-
-// function reset() {
-//   document.querySelector("#start").style.display = "block";
-//   quizBlock.style.display = "none";
-//   resetPage();
-// }
